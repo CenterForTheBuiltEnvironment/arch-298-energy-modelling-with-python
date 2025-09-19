@@ -107,10 +107,23 @@ print("Updated dict:", building_data)
 
 # --- Loops and Logical statements ---
 
+# Loop through list
+for area in room_sqm:
+    print(area, "m²")
+
 # Loop through keys and values
 for key, value in building_data.items():
     print(key, "->", value)
 
+# if-elif-else statements
+if building_data["Sqm"] > 500:
+    print("Large building")
+elif building_data["Sqm"] > 100:
+    print("Medium building")
+else:
+    print("Small building")
+
+# Combining loops and conditions
 for area in room_sqm:
     if area < 10:
         print(area, "m² -> Too small!")
@@ -119,7 +132,47 @@ for area in room_sqm:
     else:
         print(area, "m² -> Large")
 
-# --- PART 2: PANDAS BASICS ---
+
+# Functions and Modules
+def energy_use_intensity(energy_use, floor_area):
+    """Calculate Energy Use Intensity (EUI) in kWh/m²
+    energy_use: in kWh
+    floor_area: in m²
+    """
+    eui = energy_use / floor_area
+    return eui
+
+
+eui_value = energy_use_intensity(12000, 200)  # 12000 kWh, 200 m²
+print("EUI:", eui_value)
+
+
+# Import custom functions
+from bs_functions import calculate_eui
+
+eui_value2 = calculate_eui(15000, 300)  # 15000 kWh, 300 m²
+print("EUI from imported function:", eui_value2)
+
+
+# Importing a module
+import math
+
+circle_area = math.pi * (5**2)  # Area of circle with radius
+print("Circle area with radius 5:", circle_area)
+
+
+# Installing existing libraries (collection of modules)
+# `pip install pythermalcomfort`
+
+from pythermalcomfort.models import pmv_ppd
+
+result = pmv_ppd(
+    ta=25, tr=25, vel=0.1, rh=50, met=1.2, clo=0.5
+)  # Predict thermal comfort
+print("PMV and PPD:", result)
+
+
+# --- PART 2: PANDAS BASICS / WORKING WITH DATAFRAMES ---
 import pandas as pd
 
 # Create a dataset of monthly energy usage (kWh)
@@ -153,6 +206,9 @@ print(df["Energy_kWh"].head())
 
 # Row selection (slicing)
 print(df.iloc[0:3])  # first three rows
+
+# Slicing backwards
+print(df.iloc[-3:])  # last three rows
 
 # Conditional filtering
 summer = df[df["Temperature_C"] > 20]
@@ -205,6 +261,21 @@ print(merged)
 for idx, row in df.iterrows():
     if row["Energy_kWh"] > 300:
         print(row["Month"], "-> High energy use")
+
+
+# Using functions with DataFrames
+def classify_energy_use(energy):
+    if energy > 300:
+        return "High"
+    elif energy > 200:
+        return "Medium"
+    else:
+        return "Low"
+
+
+df["Energy_Class"] = df["Energy_kWh"].apply(classify_energy_use)
+print(df)
+
 
 # --- PART 3: DATA VISUALIZATION ---
 import matplotlib.pyplot as plt
@@ -266,3 +337,6 @@ plt.show()
 # 5. Filter data by some condition (e.g., high energy use).
 # 6. Merge with another dataset if available.
 # 7. Create at least two visualizations (bar chart, line plot, histogram, etc.).
+
+# Open datasets to practice with:
+# - ASHRAE Global Thermal Comfort Database II: https://github.com/CenterForTheBuiltEnvironment/ashrae-db-II
