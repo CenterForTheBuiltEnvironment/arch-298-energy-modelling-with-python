@@ -148,7 +148,7 @@ print("EUI:", eui_value)
 
 
 # Import custom functions
-from bs_functions import calculate_eui
+from functions import calculate_eui
 
 eui_value2 = calculate_eui(15000, 300)  # 15000 kWh, 300 m²
 print("EUI from imported function:", eui_value2)
