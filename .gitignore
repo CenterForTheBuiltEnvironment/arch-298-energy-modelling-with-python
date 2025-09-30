@@ -1,4 +1,6 @@
 # ---- Python Specific ----
+python-fundamentals-notebook.ipynb
+
 # Virtual environments
 venv/
 env/
