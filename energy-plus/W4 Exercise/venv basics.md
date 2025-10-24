@@ -13,7 +13,7 @@ When working with Python in VS Code, it’s recommended to use a virtual environ
      cd Desktop/building_simulations
      ```
      or, on Windows with spaces in the path:
-     ```powershell
+     ```cmd
      cd "C:\Users\YourName\Desktop\EnergyPlus Simulations"
      ```
      You can check where you are by typing `pwd` (macOS/Linux) or `cd` (Windows) — it will display your current folder path.
@@ -21,7 +21,7 @@ When working with Python in VS Code, it’s recommended to use a virtual environ
    - **Option 3 – Open from Explorer/Finder:** You can right-click your project folder in your system file browser and choose **Open with VS Code**. The terminal will automatically start in that folder.
 
 3. Run the activation command:
-   - **Windows (PowerShell):** `venv\Scripts\Activate`
+   - **Windows (CMD):** `venv\Scripts\Activate`
    - **macOS/Linux:** `source venv/bin/activate`
 4. You’ll see `(venv)` appear before the prompt — this means your virtual environment is active.
 
