@@ -15,7 +15,7 @@ Use your simplified EnergyPlus model (`model_week4.idf`) to perform a **multi-pa
 | **Wall R-value** | Wall insulation level (ft²·°F·hr/Btu) | 14.3, 21.9, 29.7 |
 | **WWR** | Window-to-Wall Ratio | 0.25, 0.40, 0.60 |
 | **SHGC** | Solar Heat Gain Coefficient | 0.25, 0.40, 0.60 |
-| **Occupancy Density** | Internal load per floor area | 0.04, 0.06, 0.08 |
+| **Occupancy Density** | People per floor area | 0.04, 0.06, 0.08 |
 | **Lighting Density** | Lighting power density (W/m²) | 7.5, 9 |
 | **Cooling Setpoint** | Indoor cooling temperature (°C) | 24, 26, 28 |
 
