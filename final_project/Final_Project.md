@@ -49,7 +49,7 @@ Using your combined dataset:
 1. Define input (`X`) and target (`y`) variables.  
 2. Split your data into training (San Francisco, NYC, Chicago) and testing (Sacramento) sets.  
 3. Train and compare multiple regression models (including at least Linear, Decision Tree, Random Forest).  
-4. Evaluate performance using MSE, MAE, and R² metrics.
+4. Evaluate performance using MSE, RMSE, MAE, and R² metrics.
 
 > ✅ **Goal:** test how well data-driven models can approximate simulation-based results.
 
